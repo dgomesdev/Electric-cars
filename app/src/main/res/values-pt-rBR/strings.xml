@@ -1,5 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Electric cars</string>
     <string name="cd_car_image">Car photo</string>
     <string name="name">Name:</string>
     <string name="price">Price:</string>
