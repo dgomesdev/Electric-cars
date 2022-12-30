@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="cd_car_image">Car photo</string>
-    <string name="name">Name:</string>
-    <string name="price">Price:</string>
-    <string name="battery_capacity">Battery capacity:</string>
-    <string name="power">Power:</string>
-    <string name="recharge_time">Recharge time:</string>
-    <string name="cars">Cars</string>
-    <string name="favorites">Favorites</string>
+    <string name="cd_car_image">Photo de la voiture</string>
+    <string name="name">Nom :</string>
+    <string name="price">Prix :</string>
+    <string name="battery_capacity">Capacité de la batterie :</string>
+    <string name="power">Puissance :</string>
+    <string name="recharge_time">Temps de recharge :</string>
+    <string name="cars">Voiture</string>
+    <string name="favorites">Favoris</string>
+    <string name="kwh_price">Prix KWh</string>
+    <string name="calculate">Calculer</string>
+    <string name="autonomy">Autonomie (Kwh/Km)</string>
+    <string name="app_name">Voitures électriques</string>
+    <string name="distance">Distance totale</string>
+    <string name="costs">Coût total : %1$f</string>
+    <string name="starts_calculation_activity">Starts calculation activity</string>
 </resources>

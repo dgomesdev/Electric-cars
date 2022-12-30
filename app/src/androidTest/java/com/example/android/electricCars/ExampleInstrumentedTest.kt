@@ -1,4 +1,4 @@
-package com.example.android.electricCars
+package com.electricCars
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

@@ -1,4 +1,4 @@
-package com.example.android.electricCars
+package com.electricCars
 
 import org.junit.Test
 
