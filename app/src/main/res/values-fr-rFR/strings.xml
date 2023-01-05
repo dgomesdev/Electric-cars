@@ -6,7 +6,7 @@
     <string name="battery_capacity">Capacité de la batterie :</string>
     <string name="power">Puissance :</string>
     <string name="recharge_time">Temps de recharge :</string>
-    <string name="cars">Voiture</string>
+    <string name="cars">Voitures</string>
     <string name="favorites">Favoris</string>
     <string name="kwh_price">Prix KWh</string>
     <string name="calculate">Calculer</string>
@@ -15,4 +15,6 @@
     <string name="distance">Distance totale</string>
     <string name="costs">Coût total : %1$f</string>
     <string name="starts_calculation_activity">Starts calculation activity</string>
+    <string name="no_internet">Internet not available</string>
+    <string name="response_error">ERROR!</string>
 </resources>

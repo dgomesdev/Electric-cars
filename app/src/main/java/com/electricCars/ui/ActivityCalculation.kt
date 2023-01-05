@@ -1,10 +1,15 @@
-package com.electricCars
+package com.electricCars.ui
 
+import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import com.electricCars.R
+import java.net.HttpURLConnection
+import java.net.URL
+import java.nio.channels.AsynchronousByteChannel
 
 class ActivityCalculation : AppCompatActivity() {
 
@@ -43,6 +48,7 @@ class ActivityCalculation : AppCompatActivity() {
         val autonomy = etAutonomy.text.toString().toFloat()
         val priceKWh = etPrice.text.toString().toFloat()
         tvTotalCost.text = getString(R.string.costs, (distance / autonomy * priceKWh))
+
     }
 
 }

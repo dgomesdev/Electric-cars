@@ -14,4 +14,6 @@
     <string name="calculate">Calculate</string>
     <string name="costs">Total cost: %1$f</string>
     <string name="starts_calculation_activity">Starts calculation activity</string>
+    <string name="no_internet">Internet not available</string>
+    <string name="response_error">ERROR!</string>
 </resources>

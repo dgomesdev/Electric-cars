@@ -4,174 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/standard_margin"
-    tools:context=".MainActivity">
+    android:padding="@dimen/standard_margin">
 
-    <TextView
-        android:id="@+id/tv_cars"
-        style="@style/TextAppearance.AppCompat.Body2"
-        android:layout_width="wrap_content"
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/cars"
-        app:layout_constraintEnd_toStartOf="@id/tv_favorites"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_favorites"
-        style="@style/TextAppearance.AppCompat.Body2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/favorites"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/tv_cars"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cv_cars"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/standard_margin"
-        android:padding="@dimen/standard_margin"
-        app:cardBackgroundColor="@color/gray"
-        app:cardCornerRadius="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_cars">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <com.google.android.material.tabs.TabItem
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:text="@string/cars" />
 
-            <ImageView
-                android:id="@+id/iv_car_image"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_margin="@dimen/standard_margin"
-                android:contentDescription="@string/cd_car_image"
-                android:src="@drawable/ic_launcher_foreground"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/favorites" />
 
-            <TextView
-                android:id="@+id/tv_name"
-                style="@style/TextAppearance.AppCompat.Body2"
-                android:layout_width="@dimen/standard_field_size"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/standard_margin"
-                android:text="@string/name"
-                android:textColor="#616161"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/iv_car_image" />
+    </com.google.android.material.tabs.TabLayout>
 
-            <TextView
-                android:id="@+id/tv_car_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/standard_margin"
-                android:textColor="#616161"
-                app:layout_constraintStart_toEndOf="@id/tv_name"
-                app:layout_constraintTop_toBottomOf="@id/iv_car_image"
-                tools:text="Car name" />
-
-            <TextView
-                android:id="@+id/tv_price"
-                style="@style/TextAppearance.AppCompat.Body2"
-                android:layout_width="@dimen/standard_field_size"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/standard_margin"
-                android:text="@string/price"
-                android:textColor="#616161"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_name" />
-
-            <TextView
-                android:id="@+id/tv_price_value"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/standard_margin"
-                android:textColor="#616161"
-                app:layout_constraintStart_toEndOf="@+id/tv_price"
-                app:layout_constraintTop_toBottomOf="@id/tv_car_name"
-                tools:text="Price" />
-
-            <TextView
-                android:id="@+id/tv_battery"
-                style="@style/TextAppearance.AppCompat.Body2"
-                android:layout_width="@dimen/standard_field_size"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/standard_margin"
-                android:text="@string/battery_capacity"
-                android:textColor="#616161"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_price" />
-
-            <TextView
-                android:id="@+id/tv_battery_value"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/standard_margin"
-                android:textColor="#616161"
-                app:layout_constraintStart_toEndOf="@+id/tv_battery"
-                app:layout_constraintTop_toBottomOf="@id/tv_price_value"
-                tools:text="Battery" />
-
-            <TextView
-                android:id="@+id/tv_power"
-                style="@style/TextAppearance.AppCompat.Body2"
-                android:layout_width="@dimen/standard_field_size"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/standard_margin"
-                android:text="@string/power"
-                android:textColor="#616161"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_battery" />
-
-            <TextView
-                android:id="@+id/tv_power_value"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/standard_margin"
-                android:textColor="#616161"
-                app:layout_constraintStart_toEndOf="@+id/tv_power"
-                app:layout_constraintTop_toBottomOf="@id/tv_battery_value"
-                tools:text="Power" />
-
-            <TextView
-                android:id="@+id/tv_recharge"
-                style="@style/TextAppearance.AppCompat.Body2"
-                android:layout_width="@dimen/standard_field_size"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/standard_margin"
-                android:text="@string/recharge_time"
-                android:textColor="#616161"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_power" />
-
-            <TextView
-                android:id="@+id/tv_recharge_time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/standard_margin"
-                android:layout_marginBottom="16dp"
-                android:textColor="#616161"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/tv_recharge"
-                app:layout_constraintTop_toBottomOf="@id/tv_power_value"
-                tools:text="Time" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </com.google.android.material.card.MaterialCardView>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_calculation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/starts_calculation_activity"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vp_viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_calculation" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tab_layout"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
