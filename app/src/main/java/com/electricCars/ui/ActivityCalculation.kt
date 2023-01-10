@@ -1,5 +1,6 @@
 package com.electricCars.ui
 
+import android.content.Context
 import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -26,7 +27,12 @@ class ActivityCalculation : AppCompatActivity() {
 
         setupViews()
         setupListeners()
+        setupCachedResult()
+    }
 
+    private fun setupCachedResult() {
+        val calculatedValue = getSharedPref()
+        tvTotalCost.text = calculatedValue.toString()
     }
 
     private fun setupViews() {
@@ -47,7 +53,22 @@ class ActivityCalculation : AppCompatActivity() {
         val distance = etDistance.text.toString().toFloat()
         val autonomy = etAutonomy.text.toString().toFloat()
         val priceKWh = etPrice.text.toString().toFloat()
-        tvTotalCost.text = getString(R.string.costs, (distance / autonomy * priceKWh))
+        val result = (distance / autonomy * priceKWh)
+        tvTotalCost.text = getString(R.string.costs, result)
+        saveSharedPref(result)
+    }
+
+    private fun saveSharedPref(result: Float) {
+        val sharedPref = getPreferences(Context.MODE_PRIVATE) ?: return
+        with(sharedPref.edit()) {
+            putFloat(getString(R.string.saved_calc), result)
+            apply()
+        }
+    }
+
+    private fun getSharedPref(): Float {
+        val sharedPref = getPreferences(Context.MODE_PRIVATE)
+        return sharedPref.getFloat(getString(R.string.saved_calc), 0.0f)
 
     }
 

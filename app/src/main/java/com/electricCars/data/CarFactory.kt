@@ -12,7 +12,8 @@ object CarFactory {
             power = "POWER",
             battery = "BATTERY",
             recharge = "RECHARGE",
-            urlPhoto = "www.google.com"
+            urlPhoto = "www.google.com",
+            isFavorite = false
         ),
         Car(
             id = 2,
@@ -21,7 +22,8 @@ object CarFactory {
             power = "POWER",
             battery = "BATTERY",
             recharge = "RECHARGE",
-            urlPhoto = "www.google.com"
+            urlPhoto = "www.google.com",
+            isFavorite = false
         )
     )
 

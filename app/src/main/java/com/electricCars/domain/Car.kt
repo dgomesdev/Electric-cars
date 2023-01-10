@@ -8,4 +8,5 @@ data class Car (
     val power: String,
     val recharge: String,
     val urlPhoto: String,
+    var isFavorite: Boolean
         )

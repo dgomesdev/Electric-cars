@@ -16,4 +16,5 @@
     <string name="starts_calculation_activity">Starts calculation activity</string>
     <string name="no_internet">Internet not available</string>
     <string name="response_error">ERROR!</string>
+    <string name="saved_calc">Saved calc</string>
 </resources>

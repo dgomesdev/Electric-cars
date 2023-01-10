@@ -1,5 +1,6 @@
 package com.electricCars.ui
 
+import android.content.ContentValues
 import android.content.Context
 import android.content.Intent
 import android.net.ConnectivityManager
@@ -19,6 +20,15 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.electricCars.R
 import com.electricCars.data.CarsApi
+import com.electricCars.data.local.CarRepository
+import com.electricCars.data.local.CarsContract.CarEntry.COLUMN_BATTERY
+import com.electricCars.data.local.CarsContract.CarEntry.COLUMN_NAME
+import com.electricCars.data.local.CarsContract.CarEntry.COLUMN_POWER
+import com.electricCars.data.local.CarsContract.CarEntry.COLUMN_PRICE
+import com.electricCars.data.local.CarsContract.CarEntry.COLUMN_RECHARGE
+import com.electricCars.data.local.CarsContract.CarEntry.COLUMN_URL_PHOTO
+import com.electricCars.data.local.CarsContract.CarEntry.TABLE_NAME
+import com.electricCars.data.local.CarsDbHelper
 import com.electricCars.domain.Car
 import com.electricCars.ui.adapter.CarAdapter
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -117,6 +127,9 @@ class CarFragment : Fragment() {
             isVisible = true
             adapter = carAdapter
         }
+        carAdapter.carItemListener = { car ->
+            var isSaved = CarRepository(requireContext()).save(car)
+        }
     }
 
     private fun setupListeners() {
@@ -207,7 +220,8 @@ class CarFragment : Fragment() {
                         battery = battery,
                         power = power,
                         recharge = recharge,
-                        urlPhoto = urlPhoto
+                        urlPhoto = urlPhoto,
+                        isFavorite = false
                     )
                     carsArray.add(model)
                 }
