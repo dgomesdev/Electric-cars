@@ -76,7 +76,7 @@ class CarFragment : Fragment() {
 
     private fun setupRetrofit() {
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://dgomesdev.github.io/api-simulations/")
+            .baseUrl("https://dgomesdev.github.io/Electric-cars/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
